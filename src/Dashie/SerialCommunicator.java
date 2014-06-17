@@ -40,10 +40,6 @@ public class SerialCommunicator implements SerialPortEventListener
 
     public void initialize()
     {
-        // the next line is for Raspberry Pi and 
-        // gets us into the while loop and was suggested here was suggested http://www.raspberrypi.org/phpBB3/viewtopic.php?f=81&t=32186
-        //System.setProperty("gnu.io.rxtx.SerialPorts", "/dev/ttyACM0");
-
         CommPortIdentifier portId = null;
         Enumeration portEnum = CommPortIdentifier.getPortIdentifiers();
 
@@ -88,19 +84,6 @@ public class SerialCommunicator implements SerialPortEventListener
     }
 
     /**
-     This should be called when you stop using the port.
-      This will prevent port locking on platforms like Linux.
-     
-    public synchronized void close()
-    {
-        if (serialPort != null) {
-            serialPort.removeEventListener();
-            serialPort.close();
-        }
-    }
-    */
-
-    /**
      * Handle an event on the serial port. Read the data and print it.
      *
      * @param oEvent
@@ -117,17 +100,6 @@ public class SerialCommunicator implements SerialPortEventListener
             }
         }
         // Ignore all the other eventTypes, but you should consider the other ones.
-    }
-    
-    public static void main(String[] args) throws Exception
-    {
-        SerialCommunicator main = new SerialCommunicator();
-        main.setPortName("COM4");
-        main.initialize();
-        Thread t = new Thread();
-        Thread.sleep(4000);
-        System.out.println("Started");
-        main.send("025510");
     }
 
     public void send(String string)
