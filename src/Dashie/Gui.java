@@ -615,7 +615,7 @@ public class Gui extends javax.swing.JFrame
     }//GEN-LAST:event_led5ActionPerformed
 
     private void brightLightsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brightLightsActionPerformed
-        // FIXME THIS IS NOT LIKED UP TO ANYTHING
+        // FIXME THIS IS NOT LINKED UP TO ANYTHING
     }//GEN-LAST:event_brightLightsActionPerformed
 
     private void led3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_led3ActionPerformed
